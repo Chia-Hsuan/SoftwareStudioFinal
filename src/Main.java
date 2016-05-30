@@ -1,11 +1,10 @@
+import javax.swing.JFrame;
 import java.awt.Color;
 
-import javax.swing.JFrame;
-
 public class Main {
-	public static void main(String[] args){
+	public static void main(String[] args) {
 		JFrame frame = new JFrame();
-		frame.setTitle("Testtttt");
+		frame.setTitle("PacMan");
 		frame.setLayout(null);
 		frame.setSize(1200,572);
 		frame.setLocation(100,100);
@@ -13,10 +12,9 @@ public class Main {
 		frame.setBackground(Color.CYAN);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		GameStage gs = new GameStage(frame);
-		Thread game_thread = new Thread(gs);
-		game_thread.start();
+		PacMan pacman = new PacMan(frame);
+		Thread pm_thread = new Thread(pacman);
+		pm_thread.start();
 		frame.setVisible(true);
-		
 	}
 }
